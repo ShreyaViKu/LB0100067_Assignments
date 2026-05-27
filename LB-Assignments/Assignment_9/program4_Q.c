@@ -9,10 +9,7 @@ int MultDigits(int iNo)
     {
         iRem = iNo % 10;
 
-        if(iRem != 0)
-        {
-            iMult = iMult * iRem;
-        }
+        iMult = iMult * iRem;
 
         iNo = iNo/ 10;
     }

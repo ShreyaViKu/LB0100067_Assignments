@@ -1,23 +1,28 @@
 #include<stdio.h>
 
-int MultDigits(int iNo)
+int CountDiff(int iNo)
 {
-    int iMult = 1;
+    int iOddSum = 0;
+    int iEvenSum = 0;
     int iRem = 0;
 
     while(iNo != 0)
     {
         iRem = iNo % 10;
 
-        if(iRem != 0)
+        if(iRem %2 == 0)
         {
-            iMult = iMult * iRem;
+            iEvenSum += iRem;
+        }
+        else
+        {
+            iOddSum += iRem;
         }
 
         iNo = iNo/ 10;
     }
 
-    return iMult;
+    return (iEvenSum - iOddSum);
 
 }
 int main()
@@ -28,7 +33,7 @@ int main()
     printf("Enter Number : ");
     scanf("%d",&iValue);
 
-    iRet = MultDigits(iValue);
+    iRet = CountDiff(iValue);
 
     printf("%d",iRet);
     
