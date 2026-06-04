@@ -1,33 +1,27 @@
-/* Accept N numbers from user and return difference between summation
-of even elements and sum of odd elements
+/* Accept N numbers from user and display all elements 
+which are divisible by 3 and 5
 */
 
 #include<stdio.h>
 #include<stdlib.h>
 
-int Difference(int Arr[],int iLength)
+void Display(int Arr[],int iLength)
 {
-    int iDiff = 0;
     int iCnt = 0;
-    int iSumEven =0, iSumOdd = 0;
+
+    printf("Elements divisible by 3 & 5 are :\n");
 
     for(iCnt = 0; iCnt < iLength; iCnt++)
     {
-        if(Arr[iCnt] % 2 == 0)
+        if(Arr[iCnt] % 5 == 0 && Arr[iCnt] % 3 == 0)
         {
-            iSumEven += Arr[iCnt];
+            printf("%d  ",Arr[iCnt]);
         }
-        else
-        {
-            iSumOdd += Arr[iCnt];
-        }
-
     }
-    return iSumEven - iSumOdd;
 }
 int main()
 {
-    int iSize = 0, iCnt = 0, iRet = 0;
+    int iSize = 0, iCnt = 0;
     int * p = NULL;
 
     printf("Enter Size of Array : \n");
@@ -48,9 +42,8 @@ int main()
         printf("Enter %d element : ",iCnt+1);
         scanf("%d",&p[iCnt]);
     }
-    iRet= Difference(p, iSize);
 
-    printf("Result is %d ",iRet);
+    Display(p, iSize);
 
     free(p);
     
