@@ -1,5 +1,5 @@
 /* Accept N numbers and no from user and check 
-whether it contains no in it or not
+whether it contains no in it or not without flag 
 */
 
 #include<stdio.h>
@@ -13,18 +13,23 @@ typedef int BOOL;
 BOOL Check(int Arr[],int iLength, int iNo)
 {
     int iCnt = 0;
-    BOOL bRet = FALSE;
 
     for(iCnt = 0; iCnt < iLength; iCnt++)
     {
         if(Arr[iCnt] == iNo)
         {
-            bRet = TRUE;
             break;
         }
 
     }
-    return bRet;
+    if(iCnt == iLength)
+    {
+        return FALSE;
+    }
+    else 
+    {
+        return TRUE;
+    }
 }
 int main()
 {
