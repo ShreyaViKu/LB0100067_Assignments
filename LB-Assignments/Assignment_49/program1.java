@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-import org.xml.sax.SAXException;
 
 class program1
 {
